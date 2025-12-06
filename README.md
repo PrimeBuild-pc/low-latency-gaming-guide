@@ -1,4 +1,4 @@
-# 🎮 Low Latency Gaming Guide
+# 🎮 Low latency gaming guide
 
 Guida tecnica completa alla riduzione della latenza nel gaming competitivo, con analisi approfondita di NVIDIA Reflex 2, polling rate dei mouse gaming, e ottimizzazioni hardware/software.
 
