@@ -1,10 +1,72 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://PrimeBuild-pc.github.io/low-latency-gaming-guide/">
+    <meta property="og:title" content="Low Latency Gaming Guide - NVIDIA Reflex 2 & Polling Rate">
+    <meta property="og:description" content="Guida tecnica completa alla riduzione della latenza nel gaming competitivo">
+    <meta property="og:image" content="https://PrimeBuild-pc.github.io/low-latency-gaming-guide/preview.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://PrimeBuild-pc.github.io/low-latency-gaming-guide/">
+    <meta property="twitter:title" content="Low Latency Gaming Guide">
+    <meta property="twitter:description" content="Guida tecnica alla bassa latenza nel gaming">
+    
+    <!-- Keywords -->
+    <meta name="keywords" content="nvidia reflex 2, frame warp, polling rate, 8k mouse, gaming latency, competitive fps, low latency">
+    <meta name="author" content="Prime Build">
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1YB9PH7S6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+    gtag('config', 'G-Y1YB9PH7S6', {
+        'anonymize_ip': true,              // Anonimizza IP
+        'cookie_flags': 'SameSite=None;Secure', // Cookie sicuri
+        'cookie_expires': 63072000,        // Cookie scadono dopo 2 anni
+        'allow_google_signals': false,     // Disabilita remarketing
+        'allow_ad_personalization_signals': false // No ads personalizzati
+    });
+    </script>
+    
     <title>Prime Build - Guide alla Bassa Latenza nel Gaming</title>
     <style>
+
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #0d0d0d;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            z-index: 9999;
+            border-top: 2px solid #ff8c00;
+            display: none;
+        }
+        #cookie-banner button {
+            background: #ff8c00;
+            color: #0d0d0d;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        #cookie-banner button:hover {
+            background: #ff9d1a;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -1040,5 +1102,139 @@
             window.scrollTo(0, 0);
         }
     </script>
+    
+    <div id="cookie-banner">
+        <p>Questo sito utilizza Google Analytics per migliorare l'esperienza utente. 
+        <a href="#" style="color: #ff8c00;">Informativa Privacy</a></p>
+        <button onclick="acceptCookies()">Accetta</button>
+        <button onclick="declineCookies()" style="background: #333;">Rifiuta</button>
+    </div>
+
+    <script>
+        // Check if user already made a choice
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('cookie-banner').style.display = 'block';
+        }
+    
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+            // Initialize Google Analytics
+            initAnalytics();
+        }
+    
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookie-banner').style.display = 'none';
+            // Disable Google Analytics
+            window['ga-disable-G-Y1YB9PH7S6'] = true;
+        }
+    
+        function initAnalytics() {
+            // Il tuo codice Google Analytics va qui
+            // (Sposta il codice GA in questa funzione)
+        }
+    
+        // Se l'utente ha già accettato, inizializza subito
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            initAnalytics();
+        }
+    </script>
+
+    <script>
+        // Track tab changes
+        function openTab(evt, tabName) {
+            // Il tuo codice esistente per cambiare tab...
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+            window.scrollTo(0, 0);
+            
+            // Google Analytics event tracking
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'tab_change', {
+                    'event_category': 'Navigation',
+                    'event_label': tabName,
+                    'value': 1
+                });
+            }
+        }
+
+        // Track external links and social media clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track social links (Instagram e Discord)
+            document.querySelectorAll('.social-links a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    var platform = 'Unknown';
+                    var action = 'click';
+                    
+                    // Identifica la piattaforma dal link
+                    if (this.href.includes('instagram.com')) {
+                        platform = 'Instagram';
+                    } else if (this.href.includes('discord.gg') || this.href.includes('discord.com')) {
+                        platform = 'Discord';
+                    }
+                    
+                    // Invia evento a Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'social_click', {
+                            'event_category': 'Social Media',
+                            'event_label': platform,
+                            'event_action': action,
+                            'transport_type': 'beacon'
+                        });
+                        
+                        // Log in console per debug (rimuovi in produzione se vuoi)
+                        console.log('GA Event: Social Click -', platform);
+                    }
+                });
+            });
+
+            // Track all external links (per riferimenti esterni nell'articolo)
+            document.querySelectorAll('a[href^="http"]:not(.social-links a)').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    var destination = this.hostname;
+                    
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'outbound_click', {
+                            'event_category': 'External Link',
+                            'event_label': destination,
+                            'event_action': 'click',
+                            'transport_type': 'beacon'
+                        });
+                        
+                        // Log in console per debug
+                        console.log('GA Event: External Link -', destination);
+                    }
+                });
+            });
+
+            // Track video thumbnail clicks (se presenti)
+            document.querySelectorAll('.video-thumbnail').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'video_click', {
+                            'event_category': 'Media',
+                            'event_label': 'YouTube Video',
+                            'transport_type': 'beacon'
+                        });
+                        
+                        console.log('GA Event: Video Click');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+</body>
+</html>
+
