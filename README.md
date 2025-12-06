@@ -55,4 +55,4 @@ Se questa guida ti è stata utile, lascia una stella ⭐ sulla repository!
 ---
 
 **Ultimo aggiornamento**: Dicembre 2025  
-**Realizzato da**: Prime Build per la community gaming competitiva
+**Realizzato da**: Prime Build per la community❤️ [![PayPal](https://img.shields.io/badge/Supporta%20su-PayPal-blue?logo=paypal)](https://paypal.me/PrimeBuildOfficial?country.x=IT&locale.x=it_IT)
