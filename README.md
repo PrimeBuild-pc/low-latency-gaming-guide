@@ -2,6 +2,10 @@
 
 Guida tecnica completa alla riduzione della latenza nel gaming competitivo, con analisi approfondita di NVIDIA Reflex 2, polling rate dei mouse gaming, e ottimizzazioni hardware/software.
 
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-green)
+![Last Commit](https://img.shields.io/github/last-commit/TUOUSERNAME/low-latency-gaming-guide)
+![License](https://img.shields.io/badge/license-MIT-blue)
+
 ## 📖 Contenuti
 
 Questa guida copre:
