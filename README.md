@@ -45,8 +45,8 @@ Contributi, segnalazioni di errori e suggerimenti sono benvenuti! Apri una Issue
 
 ## 📧 Contatti
 
-- **Discord**: Prime Build Community
-- **Instagram**: [@prime.build](https://instagram.com/prime.build)
+- **Discord**: [Prime Build Community](https://discord.gg/ze4g9EGr9D)
+- **Instagram**: [@prime_build_](https://instagram.com/prime_build_)
 
 ## ⭐ Supporto
 
