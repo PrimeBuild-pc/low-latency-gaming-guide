@@ -1110,12 +1110,14 @@
                     var action = 'click';
                     
                     // Identifica la piattaforma dal link
-                    if (this.href.includes('instagram.com')) {
+                    if (this.href.includes('github.com')) {
+                        platform = 'GitHub';
+                    } else if (this.href.includes('instagram.com')) {
                         platform = 'Instagram';
                     } else if (this.href.includes('discord.gg') || this.href.includes('discord.com')) {
                         platform = 'Discord';
                     }
-                    
+                                        
                     // Invia evento a Google Analytics
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'social_click', {
