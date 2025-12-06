@@ -16,9 +16,24 @@ Questa guida copre:
 - **Configurazioni Hardware**: setup ideali per latenza minima
 - **Benchmark e Dati Reali**: confronti prestazionali documentati
 
+## 💡 Hai Qualcosa da Aggiungere?
+
+> **Contribuisci anche tu!**  
+> Contributi, segnalazioni di errori e suggerimenti sono benvenuti! Apri una Issue o una Pull Request.
+> Crea un nuovo report, migliora quelli esistenti o condividi la tua esperienza.  
+> Diventa collaboratore e aiuta la community a crescere! 🎮
+
+**Come contribuire:**
+1. 🍴 Fai un Fork della repo
+2. ✍️ Crea o migliora un report
+3. 📤 Invia una Pull Request
+4. 🎉 Diventa parte del team!
+
+Hai domande? Scrivici su [Discord](https://discord.gg/ERUwSxE79q) o [Instagram](https://instagram.com/prime_build_)
+
 ## 🌐 Visualizza la Guida
 
-👉 **[Apri la guida completa]([https://TUOUSERNAME.github.io/NOME-REPO/](https://primebuild-pc.github.io/low-latency-gaming-guide/))**
+👉 **[Apri la guida completa](https://primebuild-pc.github.io/low-latency-gaming-guide/)**
 
 ## 🛠️ Tecnologie
 
@@ -30,10 +45,6 @@ Questa guida copre:
 ## 📝 Licenza
 
 Questo progetto è rilasciato con licenza **MIT** - sentiti libero di usarlo, modificarlo e condividerlo.
-
-## 🤝 Contributi
-
-Contributi, segnalazioni di errori e suggerimenti sono benvenuti! Apri una Issue o una Pull Request.
 
 ## 📧 Contatti
 
